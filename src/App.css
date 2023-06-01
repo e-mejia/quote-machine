@@ -1,38 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.text {
+  font-family: Roboto, sans-serif;
+  margin-top: 33px;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.quote-box {
+  width: 600px;
+  min-height: 350px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.text {
+  font-family: Roboto, sans-serif;
+  padding: 23px;
+}
+.author {
+  font-family: roboto, sans-serif;
+  font-size: 20px;
+  display: flex;
+  justify-content: right;
+  padding: 23px;
+}
+
+.icon-container {
+  display: flex;
+  justify-items: flex-start;
+  margin: 30px;
+  font-size: 27px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  margin: 20px;
+  border-radius: 7px;
+  font-size: 17px;
+  padding: 7px;
+}
+
+.tweet-quote {
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+FiTwitter {
+  height: 23px;
+}
+
+p {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
