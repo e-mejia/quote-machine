@@ -5,7 +5,7 @@ export default function Newquote(props) {
       <button
         type="button"
         onClick={onClick}
-        style={{ color: "white", backgroundColor: `${setColor}` }}
+        style={{ color: "white", backgroundColor: `${setColor}`, transition: "2s"}}
       >
         New quote
       </button>

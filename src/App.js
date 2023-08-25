@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
   const [quote, setQuote] = React.useState("");
   const [author, setAuthor] = React.useState("");
-
+  
   /* A function that generates a random number that is between
    0 and the length of the quote array*/
 
@@ -31,10 +31,6 @@ function App() {
     "F",
   ];
 
-  function getRandomQuote(arr) {
-    let random = Math.floor(Math.random() * arr.length);
-    return random;
-  }
   function getRandomHexNumber() {
     let newColor = "";
     // Generate six random numbers that will be used as the
@@ -47,18 +43,16 @@ function App() {
   }
 
   async function getQuote() {
-    let api_url = "https://type.fit/api/quotes";
+    let api_url = "https://api.quotable.io/random"
 
     let response = await fetch(`${api_url}`);
     let data = await response.json();
 
-    let randomquote = getRandomQuote(data);
-
-    setQuote(data[randomquote].text);
-    if (data[randomquote].author === null) {
+    setQuote(data.content);
+    if (data.author === null) {
       setAuthor("Author unknown");
     } else {
-      setAuthor(data[randomquote].author);
+      setAuthor(data.author);
     }
   }
 
@@ -69,13 +63,13 @@ function App() {
   let setColor = getRandomHexNumber();
 
   return (
-    <div className="App" style={{ backgroundColor: `${setColor}` }}>
+    <div className="App" style={{ backgroundColor: `${setColor}`}}>
       <div className="quote-box">
         <Quote quote={quote} author={author} setColor={setColor} />
         <div className="footer">
           <Icons setColor={setColor} />
           <Newquote onClick={getQuote} setColor={setColor} />
-        </div>
+        </div>-
       </div>
     </div>
   );
